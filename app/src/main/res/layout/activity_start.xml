@@ -7,9 +7,10 @@
     tools:context="com.example.myself.myapplication.StartActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hello_message"
+        android:text="@string/hello_message"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -17,10 +18,16 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ButtonText"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="289dp" />
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="144dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="53dp"
+        android:text="@string/Buttontext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </android.support.constraint.ConstraintLayout>
