@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">عملي1</string>
+    <string name="Buttontext">انا زر</string>
+    <string name="login_name">اسم الداخل</string>
+    <string name="hello_message">مرحبا</string>
+    <string name="Login">دخول</string>ing>
+    <string name="password">كلمة المرور</string>
+    <string name="switch_question">ما الذي تفعله هذه؟</string>
+    <string name="login_password">كلمة السر</string>
+    <string name="radioButton">زر راديو</string>
+    <string name="checkbox">صندوق التاشير</string>
+    <string name="loginButton">Login</string>
+
+</resources>
