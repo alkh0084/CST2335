@@ -34,30 +34,31 @@ public class ListItemsActivity extends Activity {
         checkBox = (CheckBox)findViewById(R.id.checkbox);
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(ListItemsActivity.this);
-                builder.setMessage(R.string.dialog_message).setTitle(R.string.dialoge_title).
-                        setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        Intent resultIntent = new Intent();
-                        resultIntent.putExtra("Response", "Here is my response");
-                        setResult(Activity.RESULT_OK, resultIntent);
-                        finish();
+            public void onCheckedChanged(final CompoundButton compoundButton, boolean b) {
+                if(compoundButton.isChecked()) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ListItemsActivity.this);
+                    builder.setMessage(R.string.dialog_message)
+                            .setTitle(R.string.dialoge_title)
+                            .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    Intent resultIntent = new Intent();
+                                    resultIntent.putExtra("Response", "Here is my response from ListItemsActivity layout");
+                                    setResult(Activity.RESULT_OK, resultIntent);
+                                    finish();
 
-                        // User clicked OK button
-                    }
-                }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                              // onResume(); // User cancelled the dialog
-                                checkBox.setChecked(false);
-                                dialog.cancel();
+                                }
+                            }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            compoundButton.setChecked(false);
+                            // dialog.dismiss();
 
-                            }
-                        });
+                        }
+                    });
 
 
-                AlertDialog alertDialog=builder.create();
-                alertDialog.show();
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+                }
             }
         });
         imageButton.setOnClickListener(new View.OnClickListener(){
@@ -67,7 +68,7 @@ public class ListItemsActivity extends Activity {
                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
                 }
-                onActivityResult(50,50, takePictureIntent);
+                onActivityResult(60,60, takePictureIntent);
 
             }
 
